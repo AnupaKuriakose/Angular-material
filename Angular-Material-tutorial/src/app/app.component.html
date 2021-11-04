@@ -11,7 +11,7 @@
 
   <mat-card>
     <button mat-button>Basic</button>
-    <button mat-raised-button>Raised</button>
+    <button mat-raised-button matTooltip="This is basic button">Raised</button>
     <button mat-icon-button><mat-icon>favorite</mat-icon></button>
     <button mat-fab>Fab</button>
     <button mat-mini-fab>mFab</button>
@@ -34,7 +34,11 @@
     ><br />
   </mat-card>
   <mat-card>
-    <mat-icon [matBadge]="badgeCounter" matBadgeSize="small" [matBadgeHidden]="badgeCounter==0">
+    <mat-icon
+      [matBadge]="badgeCounter"
+      matBadgeSize="small"
+      [matBadgeHidden]="badgeCounter == 0"
+    >
       notifications
     </mat-icon>
     <br />
@@ -42,4 +46,12 @@
     <button mat-raised-button (click)="decreaseCount()">-</button>
     <button mat-raised-button (click)="resetCount()">reset</button>
   </mat-card>
+  <br />
+  <button
+    mat-raised-button
+    matTooltip="Tooltip above the element"
+    matTooltipPosition="after"
+  >
+    Tooltip
+  </button>
 </div>
