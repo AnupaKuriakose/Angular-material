@@ -4,19 +4,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
 import { MatCardModule } from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatBadgeModule
   ],
 
-  exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule],
+  exports: [MatButtonModule, MatToolbarModule, MatIconModule, MatCardModule, MatBadgeModule],
 })
 export class MaterialModule {}
