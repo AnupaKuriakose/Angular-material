@@ -21,4 +21,5 @@ export class AppComponent {
   resetCount() {
     this.badgeCounter = 0;
   }
+ 
 }
