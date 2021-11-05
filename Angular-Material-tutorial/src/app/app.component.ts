@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular-Material-tutorial';
   badgeCounter = 0;
+  
   constructor() {
     this.badgeCounter = 10;
   }
@@ -21,5 +23,4 @@ export class AppComponent {
   resetCount() {
     this.badgeCounter = 0;
   }
- 
 }

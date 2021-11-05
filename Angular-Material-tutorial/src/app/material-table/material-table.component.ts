@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from '../PeriodicElement';
-
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-material-table',
@@ -8,15 +10,16 @@ import { PeriodicElement } from '../PeriodicElement';
   styleUrls: ['./material-table.component.css'],
 })
 export class MaterialTableComponent implements OnInit {
-  
-  displayedColumns: string[] = [];
-  ELEMENT_DATA: PeriodicElement[] =[];
-  dataSource:any;
+  dataSource!: MatTableDataSource<PeriodicElement>;
+  ELEMENT_DATA!: PeriodicElement[];
+
+  @ViewChild('paginator') paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor() {}
 
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+
   ngOnInit(): void {
-    this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  
     this.ELEMENT_DATA = [
       { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
       { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
@@ -29,7 +32,12 @@ export class MaterialTableComponent implements OnInit {
       { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
       { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
     ];
-    this.dataSource = this.ELEMENT_DATA;
+    this.dataSource = new MatTableDataSource<PeriodicElement>(
+      this.ELEMENT_DATA
+    );
+  }
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 }
-
