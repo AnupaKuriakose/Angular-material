@@ -1,0 +1,30 @@
+<mat-card>
+  <h2>Mat badge Types</h2>
+  <p>
+    <span matBadge="10" matBadgeOverlap="false" matBadgeColor="primary"
+      >Badge Text</span
+    >
+  </p>
+  <button
+    mat-raised-button
+    color="primary"
+    matBadge="8"
+    matBadgeColor="accent"
+    matBadgeOverlap="false"
+  >
+    Action</button
+  ><br />
+</mat-card>
+<mat-card>
+  <mat-icon
+    [matBadge]="badgeCounter"
+    matBadgeSize="small"
+    [matBadgeHidden]="badgeCounter == 0"
+  >
+    notifications
+  </mat-icon>
+  <br />
+  <button mat-raised-button (click)="incrementCount()">+</button>
+  <button mat-raised-button (click)="decreaseCount()">-</button>
+  <button mat-raised-button (click)="resetCount()">reset</button>
+</mat-card>

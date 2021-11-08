@@ -1,5 +1,7 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +10,12 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class AppComponent {
   title = 'Angular-Material-tutorial';
-  badgeCounter = 0;
   
-  constructor() {
-    this.badgeCounter = 10;
+  constructor(private router: Router) {
+   
   }
-  incrementCount() {
-    this.badgeCounter++;
-  }
-  decreaseCount() {
-    if (this.badgeCounter < 0) return;
-    this.badgeCounter--;
-  }
-  resetCount() {
-    this.badgeCounter = 0;
+  
+  materialCard() {
+    this.router.navigateByUrl('/card');
   }
 }

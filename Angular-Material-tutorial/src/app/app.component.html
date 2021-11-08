@@ -1,61 +1,52 @@
 <div id="material-example">
-  <h1>ToolBar</h1>
-
+  <h1>Material Example</h1>
   <mat-toolbar color="primary">
     <span>Material Design Rocks!</span>
   </mat-toolbar>
 
   <br />
-  <h1>Material table</h1>
-  <app-material-table></app-material-table>
-
-  <h1>Buttons</h1>
-
-  <mat-card>
-    <button mat-button>Basic</button>
-    <button mat-raised-button matTooltip="This is basic button">Raised</button>
-    <button mat-icon-button><mat-icon>favorite</mat-icon></button>
-    <button mat-fab>Fab</button>
-    <button mat-mini-fab>mFab</button>
-  </mat-card>
-  <mat-card>
-    <h2>Mat badge Types</h2>
-    <p>
-      <span matBadge="10" matBadgeOverlap="false" matBadgeColor="primary"
-        >Badge Text</span
+  <div class="material-items">
+    <div class="btn">
+      <button
+        mat-raised-button
+        matTooltip="Click to see material table page"
+        matTooltipPosition="after"
+        [routerLink]="'/table'"
       >
-    </p>
-    <button
-      mat-raised-button
-      color="primary"
-      matBadge="8"
-      matBadgeColor="accent"
-      matBadgeOverlap="false"
-    >
-      Action</button
-    ><br />
-  </mat-card>
-  <mat-card>
-    <mat-icon
-      [matBadge]="badgeCounter"
-      matBadgeSize="small"
-      [matBadgeHidden]="badgeCounter == 0"
-    >
-      notifications
-    </mat-icon>
-    <br />
-    <button mat-raised-button (click)="incrementCount()">+</button>
-    <button mat-raised-button (click)="decreaseCount()">-</button>
-    <button mat-raised-button (click)="resetCount()">reset</button>
-  </mat-card>
-  <br />
-  <h2>tooltip</h2>
-  <button
-    mat-raised-button
-    matTooltip="Tooltip above the element"
-    matTooltipPosition="after"
-  >
-    Tooltip
-  </button>
-  <h2>Mat Table</h2>
+        Material table
+      </button>
+    </div>
+    <div class="btn">
+      <button
+        mat-raised-button
+        matTooltip="Click to see material buttons page"
+        matTooltipPosition="after"
+        [routerLink]="'/buttons'"
+      >
+        Material buttons
+      </button>
+    </div>
+    <div class="btn">
+      <button
+        mat-raised-button
+        matTooltip="Click to see material badges page"
+        matTooltipPosition="after"
+        [routerLink]="'/badges'"
+      >
+        Material badges
+      </button>
+    </div>
+    <div class="btn">
+      
+      <button
+        mat-raised-button
+        matTooltip="Click to see material cards page"
+        matTooltipPosition="after"
+        [routerLink]="'/card'"
+      >
+        Material cards
+      </button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
 </div>

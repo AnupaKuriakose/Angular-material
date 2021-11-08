@@ -1,0 +1,14 @@
+.material-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.btn{
+    margin: 10px;
+    padding: 8px;
+}
+*{
+    box-sizing: border-box;
+}
