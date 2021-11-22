@@ -1,3 +1,12 @@
+#This project includes
+
+1. Angular material - badges
+2. Angular material - button
+3. Angular material - card
+4. Angular material - table
+5. Angular flex layout
+6.Angular material - input form
+
 # AngularMaterialTutorial
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.

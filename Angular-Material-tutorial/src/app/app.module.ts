@@ -9,6 +9,10 @@ import { MaterialTableComponent } from './material-table/material-table.componen
 import { MaterialCardComponent } from './material-card/material-card.component';
 import { MaterialButtonComponent } from './material-button/material-button.component';
 import { MaterialBadgesComponent } from './material-badges/material-badges.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialInputFormComponent } from './material-input-form/material-input-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialCardImagesComponent } from './material-card-images/material-card-images.component';
 
 @NgModule({
   declarations: [
@@ -16,15 +20,20 @@ import { MaterialBadgesComponent } from './material-badges/material-badges.compo
     MaterialTableComponent,
     MaterialCardComponent,
     MaterialButtonComponent,
-    MaterialBadgesComponent
+    MaterialBadgesComponent,
+    MaterialInputFormComponent,
+    MaterialCardImagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
